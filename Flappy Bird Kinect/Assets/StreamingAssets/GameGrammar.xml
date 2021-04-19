@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<grammar version="1.0" xml:lang="en-UK" mode="voice" root="toplevel" tag-format="semantics/1.0"
+  xmlns="http://www.w3.org/2001/06/grammar">
+
+  <rule id="toplevel" scope="public">
+    <one-of>
+      <item>
+        <ruleref uri="#playstate" />
+      </item>
+      <item>
+        <ruleref uri="#musicstate" />
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="playstate">
+    <one-of>
+      <item>
+        <tag>out.action = "new";</tag>
+        <one-of>
+          <item> Start a new game </item>
+          <item> Begin a new game </item>
+          <item> New game </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>out.action = "quit";</tag>
+        <one-of>
+          <item> quit game </item>
+          <item> finish the game </item>
+          <item> exit game </item>
+          <item> I give up </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>out.action = "start";</tag>
+        <one-of>
+          <item> Start game </item>
+          <item> Start </item>
+          <item> Begin Game </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>out.action = "controls";</tag>
+        <one-of>
+          <item> voice controls </item>
+          <item> help menu </item>
+          <item> options menu </item>
+          <item> options </item>
+          <item> how do i play </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>out.action = "pause";</tag>
+        <one-of>
+          <item> pause game </item>
+          <item> stop game </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>out.action = "resume";</tag>
+        <one-of>
+          <item> resume game </item>
+          <item> unpause game </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>out.action = "return";</tag>
+        <one-of>
+          <item> Go Back </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>out.action = "restart";</tag>
+        <one-of>
+          <item> Restart Game </item>
+          <item> Start Again </item>
+        </one-of>
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="musicstate">
+    <one-of>
+      <item>
+        <tag>out.action = "pausemusic";</tag>
+        <one-of>
+          <item> pause music </item>
+          <item> stop music </item>
+          <item> music off </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>out.action = "resumemusic";</tag>
+        <one-of>
+          <item> resume music </item>
+          <item> play music </item>
+          <item> start music </item>
+          <item> music on </item>
+        </one-of>
+      </item>
+    </one-of>
+  </rule>
+</grammar>
